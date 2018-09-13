@@ -35,8 +35,8 @@ spring:
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
         url: jdbc:postgresql://localhost:5432/GatewayOnlineShop
-        username: GatewayOnlineShop
-        password:
+        username: postgres
+        password: qqq
         hikari:
             auto-commit: false
     jpa:
