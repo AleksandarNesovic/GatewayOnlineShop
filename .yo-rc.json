@@ -1,0 +1,32 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.telnet.onlineshop"
+    },
+    "jhipsterVersion": "5.3.1",
+    "applicationType": "gateway",
+    "baseName": "GatewayOnlineShop",
+    "packageName": "com.telnet.onlineshop",
+    "packageFolder": "com/telnet/onlineshop",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "hazelcast",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "postgresql",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": "eureka",
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "ZDUyYjUwMzE4N2FmZDQ3NjY1MjAyNGRiZDVjYmVhYTQ4MGJiY2U2MjgwMjE0M2Y1MmFkMWYyYWFhZDRjMTUyZGFlZWQ4YjdjNDkzZTZlYzVlNTI4MDM5NWU5ZDY3YWJmNzI3NmQwMzg5M2RhZTExNTk5MGE5NTUwZjM5MDkyMjQ=",
+    "clientFramework": "angularX",
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "enableTranslation": false
+  }
+}
