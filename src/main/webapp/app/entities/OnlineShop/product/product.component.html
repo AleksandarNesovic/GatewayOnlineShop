@@ -3,15 +3,50 @@
         <span>Products</span>
         <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-product" [routerLink]="['/product/new']">
             <fa-icon [icon]="'plus'"></fa-icon>
-            <span >
-            Create new Product
+            <span>
+                Create new Product
             </span>
         </button>
     </h2>
     <jhi-alert></jhi-alert>
-    <br/>
-    <div class="table-responsive" *ngIf="products">
-        <table class="table table-striped">
+    <br />
+    <div class="row justify-content-center" *ngIf="products">
+        <div class="card" style="width:300px" *ngFor="let product of products ;trackBy: trackId">
+            <div id="imgWrapper"><img class="card-img-top" src="{{product.image}}" alt="Card image" style="width:100%" id="cardImg"></div>
+            <div class="card-body">
+                <h4 class="card-title">{{product.title}}</h4>
+                <div class="card-text">
+                        <p>{{product.description}}</p>
+                        <p>{{product.rating}}</p>
+                </div>
+                <div>
+                        <fa-icon [icon]="'star'"></fa-icon>
+                </div>
+                <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/product', product.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/product', product.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'product/'+ product.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+            </div>
+        </div>
+        <!-- <table class="table table-striped">
             <thead>
             <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
             <th jhiSortBy="id"><span>ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
@@ -58,15 +93,16 @@
                     </div>
                 </td>
             </tr>
-            </tbody>
-        </table>
+            </tbody> -->
+        <!-- </table> -->
     </div>
     <div *ngIf="products && products.length">
         <div class="row justify-content-center">
             <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
         </div>
         <div class="row justify-content-center">
-            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5"
+                [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
         </div>
     </div>
 </div>

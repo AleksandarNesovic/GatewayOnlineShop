@@ -12,7 +12,7 @@ import { LoginModalService, Principal, Account } from 'app/core';
 export class HomeComponent implements OnInit {
     account: Account;
     modalRef: NgbModalRef;
-
+    images: any = [];
     constructor(private principal: Principal, private loginModalService: LoginModalService, private eventManager: JhiEventManager) {}
 
     ngOnInit() {
@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit {
             });
         });
     }
-
+    getImages() {}
     isAuthenticated() {
         return this.principal.isAuthenticated();
     }

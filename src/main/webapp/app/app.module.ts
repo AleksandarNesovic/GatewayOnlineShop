@@ -20,7 +20,8 @@ import { GatewayOnlineShopEntityModule } from './entities/entity.module';
 import * as moment from 'moment';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent, ErrorComponent } from './layouts';
-
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { SliderComponent } from './layouts/slider/slider.component';
 @NgModule({
     imports: [
         BrowserModule,
@@ -30,10 +31,11 @@ import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent
         GatewayOnlineShopCoreModule,
         GatewayOnlineShopHomeModule,
         GatewayOnlineShopAccountModule,
-        GatewayOnlineShopEntityModule
+        GatewayOnlineShopEntityModule,
         // jhipster-needle-angular-add-module JHipster will add new module here
+        AngularFontAwesomeModule
     ],
-    declarations: [JhiMainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, FooterComponent],
+    declarations: [JhiMainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, FooterComponent, SliderComponent],
     providers: [
         {
             provide: HTTP_INTERCEPTORS,
