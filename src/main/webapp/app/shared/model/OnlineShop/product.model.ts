@@ -6,6 +6,7 @@ export interface IProduct {
     title?: string;
     keywords?: string;
     description?: string;
+    image?: string;
     rating?: number;
     dateAdded?: Moment;
     dateModified?: Moment;
@@ -18,6 +19,7 @@ export class Product implements IProduct {
         public title?: string,
         public keywords?: string,
         public description?: string,
+        public image?: string,
         public rating?: number,
         public dateAdded?: Moment,
         public dateModified?: Moment,
