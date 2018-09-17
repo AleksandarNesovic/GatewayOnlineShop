@@ -20,7 +20,7 @@ import { GatewayOnlineShopEntityModule } from './entities/entity.module';
 import * as moment from 'moment';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent, ErrorComponent } from './layouts';
-import { AngularFontAwesomeModule } from 'angular-font-awesome';
+
 import { SliderComponent } from './layouts/slider/slider.component';
 import { CarouselComponent } from './layouts/carousel/carousel.component';
 @NgModule({
@@ -32,9 +32,8 @@ import { CarouselComponent } from './layouts/carousel/carousel.component';
         GatewayOnlineShopCoreModule,
         GatewayOnlineShopHomeModule,
         GatewayOnlineShopAccountModule,
-        GatewayOnlineShopEntityModule,
+        GatewayOnlineShopEntityModule
         // jhipster-needle-angular-add-module JHipster will add new module here
-        AngularFontAwesomeModule
     ],
     declarations: [
         JhiMainComponent,
