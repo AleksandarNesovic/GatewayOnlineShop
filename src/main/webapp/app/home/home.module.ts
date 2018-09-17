@@ -3,7 +3,6 @@ import { RouterModule } from '@angular/router';
 
 import { GatewayOnlineShopSharedModule } from 'app/shared';
 import { HOME_ROUTE, HomeComponent } from './';
-
 @NgModule({
     imports: [GatewayOnlineShopSharedModule, RouterModule.forChild([HOME_ROUTE])],
     declarations: [HomeComponent],

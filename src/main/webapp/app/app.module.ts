@@ -22,6 +22,7 @@ import * as moment from 'moment';
 import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent, ErrorComponent } from './layouts';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { SliderComponent } from './layouts/slider/slider.component';
+import { CarouselComponent } from './layouts/carousel/carousel.component';
 @NgModule({
     imports: [
         BrowserModule,
@@ -35,7 +36,15 @@ import { SliderComponent } from './layouts/slider/slider.component';
         // jhipster-needle-angular-add-module JHipster will add new module here
         AngularFontAwesomeModule
     ],
-    declarations: [JhiMainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, FooterComponent, SliderComponent],
+    declarations: [
+        JhiMainComponent,
+        NavbarComponent,
+        ErrorComponent,
+        PageRibbonComponent,
+        FooterComponent,
+        SliderComponent,
+        CarouselComponent
+    ],
     providers: [
         {
             provide: HTTP_INTERCEPTORS,

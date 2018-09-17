@@ -56,7 +56,9 @@ export class ProductComponent implements OnInit, OnDestroy {
                 sort: this.sort()
             })
             .subscribe(
-                (res: HttpResponse<IProduct[]>) => this.paginateProducts(res.body, res.headers),
+                (res: HttpResponse<IProduct[]>) => {
+                    this.paginateProducts(res.body, res.headers);
+                },
                 (res: HttpErrorResponse) => this.onError(res.message)
             );
     }
