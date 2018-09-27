@@ -22,6 +22,7 @@ import * as moment from 'moment';
 import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent, ErrorComponent } from './layouts';
 
 import { SliderComponent } from './layouts/slider/slider.component';
+import { CarouselComponent } from './layouts/carousel/carousel.component';
 @NgModule({
     imports: [
         BrowserModule,
@@ -31,11 +32,22 @@ import { SliderComponent } from './layouts/slider/slider.component';
         GatewayOnlineShopCoreModule,
         GatewayOnlineShopHomeModule,
         GatewayOnlineShopAccountModule,
-        GatewayOnlineShopEntityModule,
+        GatewayOnlineShopEntityModule
         // jhipster-needle-angular-add-module JHipster will add new module here
+<<<<<<< HEAD
         
+=======
+>>>>>>> branch 'master' of https://github.com/AleksandarNesovic/GatewayOnlineShop.git
     ],
-    declarations: [JhiMainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, FooterComponent, SliderComponent],
+    declarations: [
+        JhiMainComponent,
+        NavbarComponent,
+        ErrorComponent,
+        PageRibbonComponent,
+        FooterComponent,
+        SliderComponent,
+        CarouselComponent
+    ],
     providers: [
         {
             provide: HTTP_INTERCEPTORS,

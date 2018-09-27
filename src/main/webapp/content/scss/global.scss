@@ -236,3 +236,12 @@ ui bootstrap tweaks
     width: 100%;
     max-height: 800px;
 }
+#carouselWrapper {
+    padding-left: 0px;
+    padding-right: 0px;
+    // height:100vh;
+}
+#homeCarouselImage {
+    height: 900px;
+    width: 1600px;
+}

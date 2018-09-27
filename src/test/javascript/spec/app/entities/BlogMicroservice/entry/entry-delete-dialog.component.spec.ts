@@ -31,6 +31,7 @@ describe('Component Tests', () => {
         });
 
         describe('confirmDelete', () => {
+<<<<<<< HEAD
             it('Should call delete service on confirmDelete', inject(
                 [],
                 fakeAsync(() => {
@@ -47,6 +48,27 @@ describe('Component Tests', () => {
                     expect(mockEventManager.broadcastSpy).toHaveBeenCalled();
                 })
             ));
+=======
+            it(
+                'Should call delete service on confirmDelete',
+                inject(
+                    [],
+                    fakeAsync(() => {
+                        // GIVEN
+                        spyOn(service, 'delete').and.returnValue(of({}));
+
+                        // WHEN
+                        comp.confirmDelete(123);
+                        tick();
+
+                        // THEN
+                        expect(service.delete).toHaveBeenCalledWith(123);
+                        expect(mockActiveModal.dismissSpy).toHaveBeenCalled();
+                        expect(mockEventManager.broadcastSpy).toHaveBeenCalled();
+                    })
+                )
+            );
+>>>>>>> branch 'master' of https://github.com/AleksandarNesovic/GatewayOnlineShop.git
         });
     });
 });

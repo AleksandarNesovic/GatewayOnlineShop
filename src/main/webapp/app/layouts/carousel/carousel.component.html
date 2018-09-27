@@ -1,0 +1,12 @@
+
+<div class="col-md-12" id="carouselWrapper">
+    <ngb-carousel >
+        <ng-template *ngFor="let product of products" ngbSlide>
+            <img src="{{product.image}}" id="homeCarouselImage" alt="Random first slide">
+            <div class="carousel-caption">
+                <h3>First slide label</h3>
+                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            </div>
+        </ng-template>
+    </ngb-carousel>
+</div>
