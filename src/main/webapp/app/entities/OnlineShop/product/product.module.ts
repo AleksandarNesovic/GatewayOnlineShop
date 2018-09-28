@@ -1,6 +1,6 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GatewayOnlineShopSharedModule } from 'app/shared';
 import {
     ProductComponent,
@@ -15,7 +15,7 @@ import {
 const ENTITY_STATES = [...productRoute, ...productPopupRoute];
 
 @NgModule({
-    imports: [GatewayOnlineShopSharedModule, RouterModule.forChild(ENTITY_STATES)],
+    imports: [FormsModule, ReactiveFormsModule, GatewayOnlineShopSharedModule, RouterModule.forChild(ENTITY_STATES)],
     declarations: [
         ProductComponent,
         ProductDetailComponent,

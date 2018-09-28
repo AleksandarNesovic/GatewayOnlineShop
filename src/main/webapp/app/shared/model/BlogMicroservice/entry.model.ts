@@ -9,6 +9,8 @@ export interface IEntry {
     date?: Moment;
     blog?: IBlog;
     tags?: ITag[];
+    img?: string;
+    prev?: string;
 }
 
 export class Entry implements IEntry {
@@ -18,6 +20,8 @@ export class Entry implements IEntry {
         public content?: any,
         public date?: Moment,
         public blog?: IBlog,
-        public tags?: ITag[]
+        public tags?: ITag[],
+        public img?: string,
+        public prev?: string
     ) {}
 }

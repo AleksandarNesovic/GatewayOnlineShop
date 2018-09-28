@@ -4,6 +4,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const rxPaths = require('rxjs/_esm5/path-mapping');
 
 const utils = require('./utils.js');
+new webpack.ProvidePlugin({
+    jQuery: "jquery",
+    $: "jquery",
+  })
 
 module.exports = (options) => ({
     resolve: {
@@ -74,7 +78,19 @@ module.exports = (options) => ({
             { from: './src/main/webapp/favicon.ico', to: 'favicon.ico' },
             { from: './src/main/webapp/manifest.webapp', to: 'manifest.webapp' },
             // jhipster-needle-add-assets-to-webpack - JHipster will add/remove third-party resources in this array
-            { from: './src/main/webapp/robots.txt', to: 'robots.txt' }
+            { from: './src/main/webapp/robots.txt', to: 'robots.txt' },
+            {
+                from: 'node_modules/froala-editor/css/',
+                to: 'assets/froala-editor/css/',
+              },
+              {
+                from: 'node_modules/font-awesome/css/font-awesome.min.css',
+                to: 'assets/font-awesome/css/font-awesome.min.css',
+              },
+              {
+                from: 'node_modules/font-awesome/fonts',
+                to: 'assets/font-awesome/fonts'
+              }
         ]),
         new HtmlWebpackPlugin({
             template: './src/main/webapp/index.html',

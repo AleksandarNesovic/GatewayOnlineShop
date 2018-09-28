@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'app/entities/OnlineShop/product/product.service';
 import { HttpResponse, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { IProduct } from 'app/shared/model/OnlineShop/product.model';
@@ -9,7 +9,7 @@ import { JhiAlertService, JhiParseLinks } from 'ng-jhipster';
     templateUrl: './carousel.component.html',
     styles: []
 })
-export class CarouselComponent implements OnInit, OnDestroy {
+export class CarouselComponent implements OnInit {
     currentAccount: any;
     products: IProduct[];
     error: any;
@@ -54,12 +54,4 @@ export class CarouselComponent implements OnInit, OnDestroy {
     private onError(errorMessage: string) {
         this.jhiAlertService.error(errorMessage, null, null);
     }
-    sort() {
-        const result = [this.predicate + ',' + (this.reverse ? 'asc' : 'desc')];
-        if (this.predicate !== 'id') {
-            result.push('id');
-        }
-        return result;
-    }
-    ngOnDestroy() {}
 }

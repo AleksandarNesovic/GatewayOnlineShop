@@ -3,62 +3,50 @@
         <span>Entries</span>
         <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-entry" [routerLink]="['/entry/new']">
             <fa-icon [icon]="'plus'"></fa-icon>
-            <span >
-            Create new Entry
+            <span>
+                Create new Entry
             </span>
         </button>
     </h2>
     <jhi-alert></jhi-alert>
-    <br/>
-    <div class="table-responsive" *ngIf="entries">
-        <table class="table table-striped">
-            <thead>
-            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="reset.bind(this)">
-            <th jhiSortBy="id"><span>ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="title"><span>Title</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="content"><span>Content</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="date"><span>Date</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="blog.name"><span>Blog</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th></th>
-            </tr>
-            </thead>
-            <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
-            <tr *ngFor="let entry of entries ;trackBy: trackId">
-                <td><a [routerLink]="['/entry', entry.id, 'view' ]">{{entry.id}}</a></td>
-                <td>{{entry.title}}</td>
-                <td>{{entry.content}}</td>
-                <td>{{entry.date | date:'medium'}}</td>
-                <td>
-                    <div *ngIf="entry.blog">
-                        <a [routerLink]="['../blog', entry.blog?.id, 'view' ]" >{{entry.blog?.name}}</a>
+    <br />
+    <div *ngIf="entries" class="container">
+        <div class="col-md-10" infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']"
+            [infiniteScrollDistance]="0">
+            <div *ngFor="let entry of entries ;let i = index; trackBy: trackId" id="singleBlogWrapper">
+                <div id="blogPrew" class="col-md-12 row padd">
+                    <div id="imgPrew" [innerHTML]="entry.img" class="col-md-3">
                     </div>
-                </td>
-                <td class="text-right">
+                    <div class="col-md-9">
+                        <div id="prewTitle" class="padd"><h5 id="entryName" [routerLink]="['/entry', entry.id, 'view' ]">{{entry.title}}</h5></div>
+                        <div id="textPrewWrap"><p id="textPrev" class="padd">{{entry.prev}}</p></div>
+                        <div id="blogControls"class="padd">
+                            <div id="blogNameWrap"><p>{{entry.blog.name}}</p></div>
+                            <fa-icon style="text-align: right" id="editIcon" [routerLink]="['/entry', entry.id, 'edit']"  [icon]="'pencil-alt'"></fa-icon>
+                            <fa-icon style="text-align: right" id="deleteIcon" [routerLink]="['/', { outlets: { popup: 'entry/'+ entry.id + '/delete'} }]" [icon]="'times'"></fa-icon>
+                        </div>
+                        
+                    </div>
+                </div>
+                 <!-- <div id="blogControls">
                     <div class="btn-group flex-btn-group-container">
-                        <button type="submit"
-                                [routerLink]="['/entry', entry.id, 'view' ]"
-                                class="btn btn-info btn-sm">
+                         <button type="submit" [routerLink]="['/entry', entry.id, 'view' ]" class="btn btn-info btn-sm">
                             <fa-icon [icon]="'eye'"></fa-icon>
                             <span class="d-none d-md-inline">View</span>
                         </button>
-                        <button type="submit"
-                                [routerLink]="['/entry', entry.id, 'edit']"
-                                class="btn btn-primary btn-sm">
+                        <button type="submit" [routerLink]="['/entry', entry.id, 'edit']" class="btn btn-primary btn-sm">
                             <fa-icon [icon]="'pencil-alt'"></fa-icon>
                             <span class="d-none d-md-inline">Edit</span>
                         </button>
-                        <button type="submit"
-                                [routerLink]="['/', { outlets: { popup: 'entry/'+ entry.id + '/delete'} }]"
-                                replaceUrl="true"
-                                queryParamsHandling="merge"
-                                class="btn btn-danger btn-sm">
+                        <button type="submit" [routerLink]="['/', { outlets: { popup: 'entry/'+ entry.id + '/delete'} }]"
+                            replaceUrl="true" queryParamsHandling="merge" class="btn btn-danger btn-sm">
                             <fa-icon [icon]="'times'"></fa-icon>
                             <span class="d-none d-md-inline">Delete</span>
                         </button>
                     </div>
-                </td>
-            </tr>
-            </tbody>
-        </table>
+                </div>  -->
+            
+            </div>
+        </div>
     </div>
 </div>

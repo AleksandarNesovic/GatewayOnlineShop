@@ -24,7 +24,7 @@ export class EntryComponent implements OnInit, OnDestroy {
     queryCount: any;
     reverse: any;
     totalItems: number;
-
+    parsed: any;
     constructor(
         private entryService: EntryService,
         private jhiAlertService: JhiAlertService,
@@ -107,10 +107,19 @@ export class EntryComponent implements OnInit, OnDestroy {
         this.links = this.parseLinks.parse(headers.get('link'));
         this.totalItems = parseInt(headers.get('X-Total-Count'), 10);
         for (let i = 0; i < data.length; i++) {
+            const dat = data[i].content;
+            let start = dat.search('<img');
+            let end = dat.search('/>');
+            let prevStart = dat.search('The');
+            let prevEnd = dat.search(' stop');
+            let img = dat.substring(start, end + 2);
+            let prev = dat.substring(prevStart, prevEnd);
+            data[i].prev = prev;
+            data[i].img = img;
             this.entries.push(data[i]);
+            console.log(this.entries[i].prev);
         }
     }
-
     private onError(errorMessage: string) {
         this.jhiAlertService.error(errorMessage, null, null);
     }

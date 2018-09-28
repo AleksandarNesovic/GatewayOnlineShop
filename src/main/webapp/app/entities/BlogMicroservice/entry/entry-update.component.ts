@@ -15,16 +15,18 @@ import { TagService } from 'app/entities/BlogMicroservice/tag';
 
 @Component({
     selector: 'jhi-entry-update',
-    templateUrl: './entry-update.component.html'
+    templateUrl: './entry-update.component.html',
+    styleUrls: ['entry.scss']
 })
 export class EntryUpdateComponent implements OnInit {
     private _entry: IEntry;
     isSaving: boolean;
-
+    htmlContent: any;
     blogs: IBlog[];
 
     tags: ITag[];
     date: string;
+    editorValue: any;
 
     constructor(
         private dataUtils: JhiDataUtils,

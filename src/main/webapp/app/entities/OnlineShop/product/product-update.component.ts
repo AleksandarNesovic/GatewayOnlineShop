@@ -20,7 +20,7 @@ export class ProductUpdateComponent implements OnInit {
     categories: ICategory[];
     dateAddedDp: any;
     dateModifiedDp: any;
-
+    public textData = `## Markdown content data`;
     constructor(
         private jhiAlertService: JhiAlertService,
         private productService: ProductService,

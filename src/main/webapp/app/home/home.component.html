@@ -1,6 +1,4 @@
 <div>
-    <p>carousel</p>
-        <jhi-carousel></jhi-carousel>
         <!-- <div [ngSwitch]="isAuthenticated()">
             <div class="alert alert-success" *ngSwitchCase="true">
                 <span id="home-logged-message" *ngIf="account"
@@ -16,4 +14,15 @@
                 <a class="alert-link" routerLink="register">Register a new account</a>
             </div>
         </div> -->
+        <div  id="singleBlogWrapper">
+            <ngb-carousel *ngIf="images">
+                <ng-template ngbSlide *ngFor="let entry of entries ;let i = index">
+                  <span [innerHtml]="entry.img"></span>
+                  <div class="carousel-caption">
+                    <h3>First slide label</h3>
+                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                  </div>
+                </ng-template>
+              </ngb-carousel>
+        </div>
 </div>

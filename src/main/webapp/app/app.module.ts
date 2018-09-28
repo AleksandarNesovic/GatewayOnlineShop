@@ -21,19 +21,34 @@ import * as moment from 'moment';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent, ErrorComponent } from './layouts';
 
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SliderComponent } from './layouts/slider/slider.component';
 import { CarouselComponent } from './layouts/carousel/carousel.component';
+import { CKEditorModule } from 'ngx-ckeditor';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { QuillModule } from 'ngx-quill';
 @NgModule({
     imports: [
         BrowserModule,
+        FormsModule,
+        ReactiveFormsModule,
         GatewayOnlineShopAppRoutingModule,
         Ng2Webstorage.forRoot({ prefix: 'jhi', separator: '-' }),
         GatewayOnlineShopSharedModule,
         GatewayOnlineShopCoreModule,
         GatewayOnlineShopHomeModule,
         GatewayOnlineShopAccountModule,
-        GatewayOnlineShopEntityModule
+        GatewayOnlineShopEntityModule,
+        AngularFontAwesomeModule,
+        FontAwesomeModule,
+        CommonModule,
         // jhipster-needle-angular-add-module JHipster will add new module here
+        QuillModule,
+        NgbModule,
+        CKEditorModule
     ],
     declarations: [
         JhiMainComponent,

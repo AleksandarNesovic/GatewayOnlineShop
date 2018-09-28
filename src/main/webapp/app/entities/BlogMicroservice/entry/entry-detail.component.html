@@ -5,7 +5,27 @@
             <hr>
             <jhi-alert-error></jhi-alert-error>
             <dl class="row-md jh-entity-details">
-                <dt><span>Title</span></dt>
+                <div id="singleBlogWrapper" class="row">
+                    <div id="blogHead" class="row col-md-3">
+                        <div id="blogDate">
+                            <div>
+                                <span>{{entry.date | date:'d'}}</span>
+                            </div>
+                            <div>
+                                <span>{{entry.date | date:'MMMM'}}</span>
+                            </div>
+                            <span> {{entry.date | date:'y'}}</span>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div id="blogInfo">
+                            <h4>{{entry.title}}</h4>
+                        </div>
+                        <div id="contentWrapper" [innerHTML]="entry.content">
+                        </div>
+                    </div>
+                </div>
+                <!-- <dt><span>Title</span></dt>
                 <dd>
                     <span>{{entry.title}}</span>
                 </dd>
@@ -29,19 +49,15 @@
                         <a [routerLink]="['/tag', tag?.id, 'view' ]">{{tag.name}}</a>{{last ? '' : ', '}}
                     </span>
                 </dd>
-            </dl>
+            </dl> -->
 
-            <button type="submit"
-                    (click)="previousState()"
-                    class="btn btn-info">
-                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
-            </button>
+                <button type="submit" (click)="previousState()" class="btn btn-info">
+                    <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+                </button>
 
-            <button type="button"
-                    [routerLink]="['/entry', entry.id, 'edit']"
-                    class="btn btn-primary">
-                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
-            </button>
+                <button type="button" [routerLink]="['/entry', entry.id, 'edit']" class="btn btn-primary">
+                    <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+                </button>
         </div>
     </div>
 </div>
