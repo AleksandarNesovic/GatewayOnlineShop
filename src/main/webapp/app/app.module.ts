@@ -44,11 +44,8 @@ import { QuillModule } from 'ngx-quill';
         GatewayOnlineShopEntityModule,
         AngularFontAwesomeModule,
         FontAwesomeModule,
-        CommonModule,
+        CommonModule
         // jhipster-needle-angular-add-module JHipster will add new module here
-        QuillModule,
-        NgbModule,
-        CKEditorModule
     ],
     declarations: [
         JhiMainComponent,
