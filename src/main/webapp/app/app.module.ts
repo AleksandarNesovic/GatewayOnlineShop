@@ -34,10 +34,10 @@ import { CarouselComponent } from './layouts/carousel/carousel.component';
         GatewayOnlineShopAccountModule,
         GatewayOnlineShopEntityModule
         // jhipster-needle-angular-add-module JHipster will add new module here
-<<<<<<< HEAD
+
         
-=======
->>>>>>> branch 'master' of https://github.com/AleksandarNesovic/GatewayOnlineShop.git
+
+
     ],
     declarations: [
         JhiMainComponent,
