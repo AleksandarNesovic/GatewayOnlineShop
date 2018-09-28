@@ -20,8 +20,7 @@ Processing '/etc/joe/editorrc'...
 Processing '/etc/joe/ftyperc'...
 Finished processing /etc/joe/ftyperc
 Finished processing /etc/joe/editorrc
-<<<<<<< HEAD
-=======
+
 
 *** These modified files were found in JOE when it aborted on Mon Sep 17 11:07:17 2018
 *** JOE was aborted because the terminal closed
@@ -46,4 +45,4 @@ Processing '/etc/joe/editorrc'...
 Processing '/etc/joe/ftyperc'...
 Finished processing /etc/joe/ftyperc
 Finished processing /etc/joe/editorrc
->>>>>>> branch 'master' of https://github.com/AleksandarNesovic/GatewayOnlineShop.git
+
