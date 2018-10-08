@@ -563,10 +563,11 @@
                     <changeLogFile>src/main/resources/config/liquibase/master.xml</changeLogFile>
                     <diffChangeLogFile>src/main/resources/config/liquibase/changelog/${maven.build.timestamp}_changelog.xml</diffChangeLogFile>
                     <driver>org.postgresql.Driver</driver>
-                    <url>jdbc:postgresql://localhost:5432/GatewayOnlineShop</url>
+                    <url>postgres://sedcuzgvriuigb:51d36ef3540a02ef0ab78c3b0cf1062e0659112b445f92313ff012e4d86cc76c@ec2-54-217-235-159.eu-west-1.compute.amazonaws.com:5432/dftsmr2e035q5p
+</url>
                     <defaultSchemaName></defaultSchemaName>
-                    <username>postgres</username>
-                    <password>qqq</password>
+                    <username>sedcuzgvriuigb</username>
+                    <password>51d36ef3540a02ef0ab78c3b0cf1062e0659112b445f92313ff012e4d86cc76c</password>
                     <referenceUrl>hibernate:spring:com.telnet.onlineshop.domain?dialect=org.hibernate.dialect.PostgreSQL82Dialect&amp;hibernate.physical_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy&amp;hibernate.implicit_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy</referenceUrl>
                     <verbose>true</verbose>
                     <logging>debug</logging>
