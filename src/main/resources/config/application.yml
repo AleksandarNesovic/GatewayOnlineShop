@@ -117,7 +117,7 @@ jhipster:
         max-pool-size: 50
         queue-capacity: 10000
     # By default CORS is disabled. Uncomment to enable.
-    #cors:
+    cors:
         #allowed-origins: "*"
         #allowed-methods: "*"
         #allowed-headers: "*"
