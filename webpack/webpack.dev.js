@@ -30,9 +30,9 @@ module.exports = (options) => webpackMerge(commonConfig({ env: ENV }), {
                 '/h2-console',
                 '/auth'
             ],
-            target: 'http://192.168.0.120:8080',
+            target: 'https://blog-microservice.herokuapp.com',
             secure: false,
-            headers: { host: 'localhost:9000' }
+            headers: { host: 'https://blog-microservice.herokuapp.com' }
         }],
         stats: options.stats,
         watchOptions: {

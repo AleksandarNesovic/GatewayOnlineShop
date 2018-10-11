@@ -51,6 +51,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @PostConstruct
     public void init() {
+      
         try {
             authenticationManagerBuilder
                 .userDetailsService(userDetailsService)
@@ -84,6 +85,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     public void configure(HttpSecurity http) throws Exception {
+        .antMatchers(org.springframework.http.HttpMethod.OPTIONS, "/api/**").permitAll()
         http
             .csrf()
             .disable()
@@ -99,6 +101,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
             .sessionManagement()
             .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
         .and()
+        .antMatchers(org.springframework.http.HttpMethod.OPTIONS, "/api/**").permitAll()
             .authorizeRequests()
             .antMatchers("/api/register").permitAll()
             .antMatchers("/api/activate").permitAll()
