@@ -7,6 +7,9 @@ import { GatewayOnlineShopAddressModule as OnlineShopAddressModule } from './Onl
 import { GatewayOnlineShopBlogModule as BlogMicroserviceBlogModule } from './BlogMicroservice/blog/blog.module';
 import { GatewayOnlineShopTagModule as BlogMicroserviceTagModule } from './BlogMicroservice/tag/tag.module';
 import { GatewayOnlineShopEntryModule as BlogMicroserviceEntryModule } from './BlogMicroservice/entry/entry.module';
+import { GatewayOnlineShopTagModule } from './tag/tag.module';
+import { GatewayOnlineShopBlogModule } from './blog/blog.module';
+import { GatewayOnlineShopEntryModule } from './entry/entry.module';
 /* jhipster-needle-add-entity-module-import - JHipster will add entity modules imports here */
 
 @NgModule({
@@ -19,6 +22,9 @@ import { GatewayOnlineShopEntryModule as BlogMicroserviceEntryModule } from './B
         BlogMicroserviceBlogModule,
         BlogMicroserviceTagModule,
         BlogMicroserviceEntryModule,
+        GatewayOnlineShopTagModule,
+        GatewayOnlineShopBlogModule,
+        GatewayOnlineShopEntryModule,
         /* jhipster-needle-add-entity-module - JHipster will add entity modules here */
     ],
     declarations: [],
