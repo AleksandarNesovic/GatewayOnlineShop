@@ -39,9 +39,10 @@ spring:
         serialization.indent_output: true
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:postgresql://localhost:5432/GatewayOnlineShop
-        username: postgres
-        password: qqq
+        url: postgres://sedcuzgvriuigb:51d36ef3540a02ef0ab78c3b0cf1062e0659112b445f92313ff012e4d86cc76c@ec2-54-217-235-159.eu-west-1.compute.amazonaws.com:5432/dftsmr2e035q5p
+
+        username: sedcuzgvriuigb
+        password: 51d36ef3540a02ef0ab78c3b0cf1062e0659112b445f92313ff012e4d86cc76c
         hikari:
             auto-commit: false
     jpa:
